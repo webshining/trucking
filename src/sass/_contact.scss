@@ -1,0 +1,41 @@
+.contact {
+    padding: 20px 0;
+    height: 180px;
+    background: rgb(95, 95, 95);
+    color: #ffffff;
+    &_header {
+        position: relative;
+        width: max-content;
+        font-size: 20px;
+        font-weight: 600;
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 80%;
+            height: 3px;
+            background: #ffffff;
+            border-radius: 5px;
+        }
+    }
+    &_info {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        row-gap: 20px;
+        grid-template-rows: repeat(2, auto);
+    }
+}
+
+
+@media (max-width: 750px) {
+    .contact {
+        &_header {
+            font-size: 16px;
+        }
+        &_info-link {
+            font-size: 13px;
+        }
+    }
+}

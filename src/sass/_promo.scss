@@ -1,9 +1,9 @@
 .promo {
     position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 50px 0 0;
-    background: url("../images/asphalt-cars-clouds-1307546.jpg") no-repeat 50%/cover;
+    height: 100vh;
+    background: url("../images/asphalt-cars-clouds-1307546.jpg");
+    background-position: center;
+    background-size: cover;
     color: #ffffff;
     &:after {
         content: "";
@@ -12,86 +12,99 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: #494949be;
+        background: #6d6d6da6;
         backdrop-filter: blur(10px);
         z-index: 10;
     }
     .container {
         display: flex;
-        align-items: center;
         flex-direction: column;
         justify-content: space-around;
+        align-items: center;
     }
     &_text {
-        position: relative;
+        width: 100%;
         text-align: center;
         span {
-            font-size: 35px;
+            font-size: 30px;
             font-weight: 600;
         }
         &-map {
-            margin-top: 30px;
+            margin-top: 20px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 20px;
-            font-size: 16px;
+            gap: 0 100px;
         }
         &-point {
             position: relative;
-            width: 200px;
-            &::after {
+            width: 150px;
+            font-size: 20px;
+            &:before {
                 content: "";
                 position: absolute;
+                bottom: -15px;
                 left: 50%;
-                bottom: -20px;
                 transform: translateX(-50%);
                 width: 10px;
                 height: 10px;
-                background: #6993c9;
-                border-radius: 10px;
+                border-radius: 20px;
+                background: rgb(99, 193, 255);
             }
-        }
-        &-line {
-            &::before {
+            &::after {
                 content: "";
                 position: absolute;
-                left: calc(50% + 20px);
-                bottom: -18px;
-                width: 90%;
-                height: 5px;
-                background: #ffffff;
-                border-radius: 10px;
+                bottom: -15px;
+                left: 65%;
+                width: 100px;
+                height: 10px;
+                border-radius: 20px;
+                background: rgb(99, 193, 255);
+            }
+            &:nth-child(2) {
+                &::after {
+                    left: unset;
+                    right: 65%;
+                }
             }
         }
     }
     &_button {
-        cursor: pointer;
         position: relative;
-        padding: 10px 15px;
-        font-size: 25px;
-        font-weight: 500;
-        border-radius: 10px;
-        border: 1px solid #ffffff;
+        cursor: pointer;
+        font-size: 23px;
+        padding: 5px 10px;
+        border: 2px solid #ffffff;
+        border-radius: 5px;
         overflow: hidden;
-        transition: all .5s ease;
-        &:after {
+        transition: all .3s ease;
+        &:before {
             content: "";
             position: absolute;
-            left: 0;
             top: 0;
-            width: 0;
+            left: 0;
             height: 100%;
-            transition: all .5s ease;
             background: #ffffff;
+            width: 0;
+            transition: all .3s ease;
             border-radius: 0 50% 50% 0;
             z-index: -1;
         }
         &:hover {
             color: #000000;
-            &:after {
-                width: 120%;
+            &:before {
+                width: 100%;
                 border-radius: 0;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 750px) {
+    .promo {
+        &_text {
+            span {
+                font-size: 25px;
             }
         }
     }

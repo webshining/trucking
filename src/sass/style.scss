@@ -10,6 +10,7 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
 
 a {
@@ -26,5 +27,14 @@ a {
     z-index: 100
 }
 
+@media (max-width: 1400px) {
+    .container {
+        max-width: 80vw;
+    }
+}
+
+
 @import "./header";
 @import "./promo";
+@import "./contact";
+@import "./request";
